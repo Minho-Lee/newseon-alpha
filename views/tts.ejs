@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pre-loaded Example - Watson Text to Speech</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="container">
+
+    <section>
+      <p>
+        <button id="button">Load Text</button>
+      </p>
+      <p>
+        <button id="play">Play </button>
+      </p>
+      <p>
+        <button id="pause">pause </button>
+      </p>
+      <input type="text" id="text">
+    </section>
+
+    <script src="bower_components/watson-speech/dist/watson-speech.js"></script>
+    <!-- window.fetch pollyfill for IE/Edge & Older Chrome/FireFox -->
+    <script src="bower_components/fetch/fetch.js"></script>
+
+    <script>
+// fetch the toke and create the audio element ahead of time
+var audio;
+document.querySelector('#button').onclick = function () {
+
+fetch('/api/text-to-speech/token')
+  .then(function(response) {
+    return response.text();
+  }).then(function (token) {
+    audio = WatsonSpeech.TextToSpeech.synthesize({
+      text: document.querySelector('#text').value,
+      token: token,
+      autoPlay: false,
+      accept: 'audio/wav'
+    });
+  });};
+
+
+document.querySelector('#play').onclick = function () {
+  audio.play();
+};
+
+document.querySelector('#pause').onclick = function () {
+  audio.pause();
+};
+</script>
+  </div>
+</body>
+
+</html>

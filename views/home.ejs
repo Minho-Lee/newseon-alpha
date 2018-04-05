@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Newseum</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>SAMPLE LOGO</h3>
+                <strong>SL</strong>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" id="sidebarCollapse">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Queue
+
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content" style="width:100vw;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="display:inline-block;">
+                            <div style="padding:5px; float:left;">
+                                <img src="images/newseum-logo.png" alt="" style=" border-radius: 2px;display:inline-block;position:relative;height:70px;width:70px;">
+                            </div>
+                            <div style="padding:5px; float:left;">
+                                <h1 style="color:black; font-size:24px;">N</h1>
+                                <h1 style="color:black; font-size:24px;">This is what is made up of</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row news-album-container">
+                    <div class="col-md-3">
+                        <div class="news-album" id="home">
+                            <h1 class="news-album-cover-title" id="news-section" style="text-transform: uppercase;">home
+                            </h1>
+                        </div>
+                        <div>
+                            <h1 style="text-transform: uppercase;">home
+                            </h1>
+                            <h6 id="time">FRIDAY APRIL 5, 2018 - 43 ARTICLES</h6>
+                            <h6>NY TIMES</h6>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="news-container"> 
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/world/05USBriefing-amcore/05USBriefing-amcore-thumbStandard.jpg"
+                                                id="media0" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button0" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title0">ISIS, Brazil, Facebook: Your Thursday Briefing</h3>
+                                            <p class="news-block-byline"
+                                                id="byline0">By CHRIS STANFORD</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button0"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 0="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/nyregion/05nytoday1/merlin_136302099_1f6c3076-863c-4fff-9518-d1076f2c5a2d-thumbStandard.jpg"
+                                                id="media1" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button1" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title1">New York Today: More Snow on the Way</h3>
+                                            <p class="news-block-byline" id="byline1">By JONATHAN WOLFE</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button1"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 1="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/23/world/05DC-TRADE-02/merlin_135876780_2e0122c9-9ecf-44f0-b0ae-e4548aa8a70a-thumbStandard.jpg"
+                                                id="media2" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button2" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title2">White House Tries to Tamp Down Trade War Fears as China Retaliates</h3>
+                                            <p class="news-block-byline"
+                                                id="byline2">By ANA SWANSON and KEITH BRADSHER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button2"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 2="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/business/05crossfire/05crossfire-thumbStandard.jpg"
+                                                id="media3" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button3" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title3">How U.S.-China Trade Spat Could Threaten Manufacturing</h3>
+                                            <p class="news-block-byline"
+                                                id="byline3">By NATALIE KITROEFF and BEN CASSELMAN</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button3"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 3="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/04/upshot/up-trade/up-trade-thumbStandard.jpg"
+                                                id="media4" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button4" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title4">If There’s a U.S.-China Trade War, China May Have Some ‘Unconventional Weapons’</h3>
+                                            <p
+                                                class="news-block-byline" id="byline4">By NEIL IRWIN</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button4"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 4="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/business/05FACEBOOK/05FACEBOOK-thumbStandard.jpg"
+                                                id="media5" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button5" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title5">Facebook Says Cambridge Analytica Harvested Data of Up to 87 Million Users</h3>
+                                            <p
+                                                class="news-block-byline" id="byline5">By CECILIA KANG and SHEERA FRENKEL</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button5"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 5="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/21/business/00cambridgestory6/21FACEBOOK-thumbStandard.jpg"
+                                                id="media6" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button6" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title6">Cambridge Analytica and Facebook: The Scandal and the Fallout So Far</h3>
+                                            <p class="news-block-byline"
+                                                id="byline6">By NICHOLAS CONFESSORE</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button6"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 6="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/06/us/politics/06dc-mueller1/06dc-mueller1-thumbStandard.jpg"
+                                                id="media7" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button7" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title7">For Mueller, a Feared Weakness Becomes a Strength</h3>
+                                            <p class="news-block-byline"
+                                                id="byline7">By CHARLIE SAVAGE</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button7"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 7="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/us/politics/05dc-inquiry1/05dc-inquiry1-thumbStandard.jpg"
+                                                id="media8" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button8" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title8">Witness in Mueller Inquiry Who Advises U.A.E. Ruler Also Has Ties to Russia</h3>
+                                            <p
+                                                class="news-block-byline" id="byline8">By MARK MAZZETTI, DAVID D. KIRKPATRICK, BEN PROTESS and SHARON LaFRANIERE</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button8"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 8="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/08/magazine/08mag-murkowski1/08mag-murkowski1-thumbStandard-v2.jpg"
+                                                id="media9" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button9" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title9">How Lisa Murkowski Mastered Trump’s Washington</h3>
+                                            <p class="news-block-byline"
+                                                id="byline9">By SUSAN DOMINUS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button9"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 9="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/us/politics/05dc-military-1/05dc-military-1-thumbStandard.jpg"
+                                                id="media10" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button10" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title10">‘All It Takes Is One Mistake’: Worries Over Plan to Send National Guard to Border</h3>
+                                            <p
+                                                class="news-block-byline" id="byline10">By HELENE COOPER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button10"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 10="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/us/politics/05dc-caravan1-print/05dc-caravan1-thumbStandard.jpg"
+                                                id="media11" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button11" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title11">‘You Hate America!’: How the ‘Caravan’ Story Exploded on the Right</h3>
+                                            <p class="news-block-byline"
+                                                id="byline11">By JEREMY W. PETERS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button11"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 11="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/world/05caravan/05caravan-thumbStandard.jpg"
+                                                id="media12" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button12" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title12">Inside an Immigrant Caravan: Women and Children, Fleeing Violence</h3>
+                                            <p class="news-block-byline"
+                                                id="byline12">By KIRK SEMPLE</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button12"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 12="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/opinion/05thu1/05thu1-thumbStandard.jpg"
+                                                id="media13" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button13" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title13">Trump’s Irrational Border Plan</h3>
+                                            <p class="news-block-byline" id="byline13">By THE EDITORIAL BOARD</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button13"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 13="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/opinion/05stevens/05stevens-thumbStandard.jpg"
+                                                id="media14" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button14" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title14">When Migrants Are Treated Like Slaves</h3>
+                                            <p class="news-block-byline" id="byline14">By JACQUELINE STEVENS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button14"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 14="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/opinion/05friedman/05friedman-thumbStandard-v2.jpg"
+                                                id="media15" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button15" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title15">Ordering Five Million Deaths Online</h3>
+                                            <p class="news-block-byline" id="byline15">By RICHARD A. FRIEDMAN</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button15"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 15="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/opinion/05Blow-web/05Blow-web-thumbStandard.jpg"
+                                                id="media16" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button16" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title16">Trump, Driven by Fear</h3>
+                                            <p class="news-block-byline" id="byline16">By CHARLES M. BLOW</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button16"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 16="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/opinion/05muller/05muller-thumbStandard.jpg"
+                                                id="media17" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button17" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title17">‘Democracy’ Still Matters</h3>
+                                            <p class="news-block-byline" id="byline17">By JAN-WERNER MÜLLER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button17"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 17="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/nyregion/05shooting2/merlin_136397121_648b96a0-ee47-454a-92b7-01c7ccd81ee9-thumbStandard.jpg"
+                                                id="media18" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button18" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title18">Police Fatally Shoot a Brooklyn Man After Falsely Believing He Had a Gun</h3>
+                                            <p
+                                                class="news-block-byline" id="byline18">By BENJAMIN MUELLER and NATE SCHWEBER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button18"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 18="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/world/05Brazil-web1/05Brazil-web1-thumbStandard.jpg"
+                                                id="media19" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button19" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title19">Lula, Brazil’s Ex-President, Can Be Jailed, Court Rules</h3>
+                                            <p class="news-block-byline"
+                                                id="byline19">By ERNESTO LONDOÑO and SHASTA DARLINGTON</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button19"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 19="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/06/world/asia/06japan-sumo-promo/06japan-sumo-promo-thumbStandard.jpg"
+                                                id="media20" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button20" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title20">Women Barred From Sumo Ring, Even to Save a Man’s Life</h3>
+                                            <p class="news-block-byline"
+                                                id="byline20">By MOTOKO RICH</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button20"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 20="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/business/05pipeline/05pipeline-thumbStandard.jpg"
+                                                id="media21" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button21" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title21">Cyberattack Shows Vulnerability of Gas Pipeline Network</h3>
+                                            <p class="news-block-byline"
+                                                id="byline21">By CLIFFORD KRAUSS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button21"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 21="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/world/05strikes/05strikes-thumbStandard.jpg"
+                                                id="media22" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button22" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title22">Stranded French Commuters Could Test Macron’s Reform Agenda</h3>
+                                            <p class="news-block-byline"
+                                                id="byline22">By ADAM NOSSITER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button22"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 22="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/06/us/politics/06dc-detain1/06dc-detain1-thumbStandard-v2.jpg"
+                                                id="media23" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button23" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title23">Pentagon Wades Deeper Into Detainee Operations in Syria</h3>
+                                            <p class="news-block-byline"
+                                                id="byline23">By ERIC SCHMITT</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button23"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 23="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/business/05STARVE/05STARVE-thumbStandard.jpg"
+                                                id="media24" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button24" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title24">YouTube Attacker’s Complaints Echoed Fight Over Ad Dollars</h3>
+                                            <p class="news-block-byline"
+                                                id="byline24">By NELLIE BOWLES and JACK NICAS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button24"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 24="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/29/nyregion/00elevator-top/00elevator-top-thumbStandard.jpg"
+                                                id="media25" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button25" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title25">A Tiny Elevator, a Haunting Reminder in Brooklyn</h3>
+                                            <p class="news-block-byline"
+                                                id="byline25">By LUIS FERRÉ-SADURNÍ</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button25"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 25="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/08/obituaries/00overlooked-Stringfield1/00overlooked-images-two-slide-AKTG-thumbStandard.jpg"
+                                                id="media26" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button26" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title26">Overlooked No More: Bessie B. Stringfield, the ‘Motorcycle Queen of Miami’</h3>
+                                            <p
+                                                class="news-block-byline" id="byline26">By NIKITA STEWART</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button26"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 26="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/06/arts/06brunetti1/30brunetti1-thumbStandard.jpg"
+                                                id="media27" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button27" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title27">Viewing Europe’s Houses of Worship in Wild Detail</h3>
+                                            <p class="news-block-byline"
+                                                id="byline27">By ROBERTA SMITH</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button27"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 27="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/arts/05jerseyshore6/05jerseyshore6-thumbStandard.jpg"
+                                                id="media28" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button28" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title28">On ‘Jersey Shore Family Vacation’ and ‘Trading Spaces,’ Reality TV Eats Itself</h3>
+                                            <p
+                                                class="news-block-byline" id="byline28">By JON CARAMANICA</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button28"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 28="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/07/technology/personaltech/07techtipwebART/07techtipwebART-thumbStandard.jpg"
+                                                id="media29" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button29" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title29">Wrestling With Auto-Correct</h3>
+                                            <p class="news-block-byline" id="byline29">By J. D. BIERSDORFER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button29"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 29="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/01/arts/01fiveshows1/01fiveshows1-thumbStandard.jpg"
+                                                id="media30" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button30" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title30">5 Shows to See in New York: ‘Children of a Lesser God,’ ‘Mlima’s Tale’ and More</h3>
+                                            <p
+                                                class="news-block-byline" id="byline30">By JESSE GREEN</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button30"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 30="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/01/travel/01getaway1/01getaway1-thumbStandard.jpg"
+                                                id="media31" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button31" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title31">Springtime Changes at the Airport</h3>
+                                            <p class="news-block-byline" id="byline31">By STEPHANIE ROSENBLOOM</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button31"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 31="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/25/realestate/25cleaning5/25cleaning5-thumbStandard-v2.jpg"
+                                                id="media32" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button32" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title32">Cleaning Tools for a Tiny Apartment</h3>
+                                            <p class="news-block-byline" id="byline32">By JOLIE KERR</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button32"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 32="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2011/07/28/fashion/social_inline/social_inline-thumbStandard-v3.jpg"
+                                                id="media33" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button33" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title33">The Roadblock to a Healthy Relationship With Food</h3>
+                                            <p class="news-block-byline"
+                                                id="byline33">By PHILIP GALANES</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button33"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 33="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/08/education/learning/08LEARNING-COVER/08LEARNING-COVER-thumbStandard.jpg"
+                                                id="media34" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button34" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title34">With Changing Students and Times, Colleges Are Going Back to School</h3>
+                                            <p class="news-block-byline"
+                                                id="byline34">By ERICA L. GREEN</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button34"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 34="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/08/arts/08TOMHOLLANDERa/08TOMHOLLANDERa-thumbStandard.jpg"
+                                                id="media35" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button35" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title35">Tom Hollander Is Starring on Broadway, Poor Guy</h3>
+                                            <p class="news-block-byline"
+                                                id="byline35">By ALEXIS SOLOSKI</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button35"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 35="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/arts/05latenight1/05latenight1-thumbStandard.png"
+                                                id="media36" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button36" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title36">Mike Myers’s Dr. Evil Tells Jimmy Fallon He Was Fired From the White House</h3>
+                                            <p
+                                                class="news-block-byline" id="byline36">By GIOVANNI RUSSONELLO</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button36"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 36="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/fashion/05LIZA1/05LIZA1-thumbStandard.jpg"
+                                                id="media37" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button37" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title37">Liza Minnelli Goes Marie Kondo; Old Holdings to Be Shown and Sold</h3>
+                                            <p class="news-block-byline"
+                                                id="byline37">By FRANK DeCARO</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button37"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 37="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/08/magazine/08mag-talk-promo/08mag-talk-promo-thumbStandard.jpg"
+                                                id="media38" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button38" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title38">Anne Wojcicki Wants to Be Healthy at 100</h3>
+                                            <p class="news-block-byline" id="byline38">Interview by DAN AMIRA</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button38"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 38="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/03/27/well/vitamins-cenicola/merlin_10763161_808347ff-5fb2-4ffd-b80f-3ec9a13514db-thumbStandard.jpg"
+                                                id="media39" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button39" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title39">Older Americans Are ‘Hooked’ on Vitamins</h3>
+                                            <p class="news-block-byline" id="byline39">By LIZ SZABO, KAISER HEALTH NEWS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button39"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 39="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/10/well/physed-banana/physed-banana-thumbStandard.jpg"
+                                                id="media40" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button40" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title40">Bananas vs. Sports Drinks? Bananas Win in Study</h3>
+                                            <p class="news-block-byline"
+                                                id="byline40">By GRETCHEN REYNOLDS</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button40"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 40="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/science/05TB-DINOPRINTS1/05TB-DINOPRINTS1-thumbStandard.jpg"
+                                                id="media41" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button41" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title41">In Footprints on Scotland’s Isle of Skye, Signs of a Dinosaur Playground</h3>
+                                            <p
+                                                class="news-block-byline" id="byline41">By NICHOLAS ST. FLEUR</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button41"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 41="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-section-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="left-float section-news-album-cover-container">
+                                            <img class="section-news-album" src="https://static01.nyt.com/images/2018/04/05/business/05techusing-1/05techusing-1-thumbStandard.jpg"
+                                                id="media42" style="height:75px;width:75px;" alt="Avatar">
+                                            <div class="news-album-overlay play-cover-button" id="home">
+                                                <img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)"
+                                                    id="play-button42" src="images/play.png" alt="" style="">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <h3 class="news-block-title" id="title42">Twitter, Facebook, Slack: Using Every Tool to Hear What Readers Think</h3>
+                                            <p
+                                                class="news-block-byline" id="byline42">By HANNA INGBER</p>
+                                        </div>
+                                        <div style="margin-left:6rem;">
+                                            <div class="row zero-margin">
+                                                <img style="float:left;" class="add-to-playlist-button verticle-align" id="add-to-queue-button42"
+                                                    src="/images/add-button.png" onclick="addToQueue(this)" alt="">
+                                                <div class="add-to-playlist-button-text verticle-align">Add to Playlist</div>
+                                                <img style="margin-left: 3rem;" class="add-like-button verticle-align left-float"
+                                                    id="like-button" 42="" src="/images/like-button.png" onclick="likeArticle(this)"
+                                                    alt="">
+                                                <div class="add-like-button-text verticle-align">Like</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Player bar at the bottom -->
+        <div id="player-bar" class="info">
+            <div class="card-3" style="text-align: center;">
+                <div class="audio-progress-bar" style="height:5px; background-color:purple; width:100%; position:absolute; top:0;left:0;"></div>
+                <div style="display:inline-block;">
+                    <img src="images/sample-3.jpg" style="height:75px;float:left; margin-left:2rem; margin-right: 2rem;" alt="">
+                    <div style="float:left; text-align: left; margin-left:2rem;margin-right: 12rem; height:75px;">
+                        <div style="position: relative; top: 50%;transform: translateY(-50%);">
+                            <div class="news-headline-player-bar" style="font-size: 1.25rem;">This is the sample content, isnt it?</div>
+                            <div class="news-publisher-player-bar" style="font-size: 0.65rem;">More sample content.</div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div style="float:left;height: 75px;">
+                        <div style="position: relative; top: 50%;transform: translateY(-50%);">
+                            <img src="images/prev.png" alt="" style="margin:1rem; width:36px;">
+                            <img id="play-button" src="images/play.png" alt="" style="margin:1rem; width:40px;">
+                            <img style="display:none; " id="pause-button" src="images/pause.png" alt="">
+                            <img src="images/next.png" alt="" style="margin:1rem; width:36px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="bower_components/watson-speech/dist/watson-speech.js"></script>
+    <!-- window.fetch pollyfill for IE/Edge & Older Chrome/FireFox -->
+    <script src="bower_components/fetch/fetch.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <script src="js/articlePlayer.js"></script>
+    <script src="js/discover.js"></script>
+
+</body>
+
+</html>
