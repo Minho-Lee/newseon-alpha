@@ -2,7 +2,44 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var newsResultsArray = [];
+
+var newsResultsArray = [
+    {
+      "id": "Vn0yU",
+      "media": "https://static01.nyt.com/images/2018/04/06/us/politics/06dc-tariffs-TRUMP/merlin_136439370_4d6d9393-6437-42f3-939a-9689d035d2b6-thumbStandard.jpg",
+      "headline": "Trump Doubles Down on Potential Trade War With China",
+      "abstract": "President Trump said he would consider imposing tariffs on an additional $100 billion worth of Chinese goods in retaliation for China’s plan to impose its own tariffs on American products.",
+      "publisher": "By ANA SWANSON and KEITH BRADSHER"
+    },
+    {
+      "id": "aTizh",
+      "media": "https://static01.nyt.com/images/2018/04/06/business/06SECURITY1/06SECURITY1-thumbStandard.jpg",
+      "headline": "YouTube Shooting Puts a Focus on Workplace Security",
+      "abstract": "Active shooter trainings, security cameras and “behavioral threat assessment teams” try to avoid or mitigate office attacks like the one at YouTube.",
+      "publisher": "By TIFFANY HSU and JACK NICAS"
+    },
+    {
+      "id": "9c1s4",
+      "media": "https://static01.nyt.com/images/2018/04/06/business/06stewart/06stewart-thumbStandard.jpg",
+      "headline": "With Tesla in a Danger Zone, Can Model 3 Carry It to Safety?",
+      "abstract": "A test drive shows the allure of the company’s mass-market electric car and limitations of its Autopilot system.",
+      "publisher": "By JAMES B. STEWART"
+    },
+    {
+      "id": "NV5Tu",
+      "media": "https://static01.nyt.com/images/2018/04/06/business/06dc-nafta-1/06dc-nafta-1-thumbStandard.jpg",
+      "headline": "White House Tries to Pull Nafta Back From Brink as Deadlines Loom",
+      "abstract": "After months of stalemate, American negotiators are eager for quick progress on the North American trade deal.",
+      "publisher": "By ANA SWANSON"
+    },
+    {
+      "id": "XouVS",
+      "media": "https://static01.nyt.com/images/2018/04/06/business/06ATLANTIC1/06ATLANTIC1-thumbStandard.jpg",
+      "headline": "The Atlantic Cuts Ties With Conservative Writer Kevin Williamson",
+      "abstract": "Mr. Williamson’s hiring last month led to outrage on the left, which in turn sparked outrage on the right. Now he is no longer a columnist at The Atlantic.",
+      "publisher": "By MICHAEL M. GRYNBAUM"
+    }
+  ];
 
 function playArticle(img) {
     if (audio != null) { audio.pause(); }
@@ -170,71 +207,33 @@ $(function () {
     });
 
     articlePlayer = new articlePlayer();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
+ 
+    var today = new Date();
 
-    url += '?' + $.param({
-        'api-key': "2c9cc4b44f294ebd952e98a69c93118d"
-    });
+    var weekday = new Array(7);
+    weekday[0] = "MONDAY";
+    weekday[1] = "TUESDAY";
+    weekday[2] = "WEDNESDAY";
+    weekday[3] = "THURSDAY";
+    weekday[4] = "FRIDAY";
+    weekday[5] = "SATURDAY";
+    weekday[6] = "SUNDAY";
 
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function (result) {
-        var today = new Date();
+    var month = new Array(12);
+    month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+    $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + 5 + " ARTICLES");
 
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
-
-            var media;
-
-            if ((result.results[i]).multimedia.length > 0) {
-                media = (result.results[i]).multimedia[0].url;
-            }
-
-            var headline = (result.results[i]).title;
-            var abstract = (result.results[i]).abstract;
-            var publisher = (result.results[i]).byline;
-
-            if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-                $('.news-container').append(newsSectionDiv);
-
-                var newsResult = {
-                    "id": randomID(),
-                    "media": media,
-                    "headline": headline,
-                    "abstract": abstract,
-                    "publisher": publisher                    
-                };
-                newsResultsArray.push(newsResult);
-            }
-        }
-    }).fail(function (err) {
-        throw err;
-    });
 
     $("#play-button").click(function (event) {
         audio.play();

@@ -32,6 +32,35 @@ app.get('/sidebar', function (req, res) {
 app.get('/app', function (req, res) {
   res.render('app.ejs');
 });
+
+app.get('/home', function (req, res) {
+  res.render('home.ejs');
+});
+app.get('/sports', function (req, res) {
+  res.render('sports.ejs');
+});
+app.get('/science', function (req, res) {
+  res.render('science.ejs');
+});
+app.get('/technology', function (req, res) {
+  res.render('tech.ejs');
+});
+app.get('/politics', function (req, res) {
+  res.render('politics.ejs');
+});
+app.get('/business', function (req, res) {
+  res.render('business.ejs');
+});
+
+
+app.get('/testingpage', function (req, res) {
+  res.render('testingpage.ejs');
+});
+
+
+
+
+
 app.get('/discover', function (req, res) {
   res.render('discover.ejs', {
     section: req.query.section

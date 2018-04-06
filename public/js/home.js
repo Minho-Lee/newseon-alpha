@@ -2,7 +2,44 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var newsResultsArray = [];
+
+var newsResultsArray = [
+    {
+      "id": "owazs",
+      "media": "https://static01.nyt.com/images/2018/04/05/briefing/05evening-promo/05evening-promo-thumbStandard.jpg",
+      "headline": "Iraq, Trump, Pruitt: Your Thursday Evening Briefing",
+      "abstract": "Here’s what you need to know at the end of the day.",
+      "publisher": "By KAREN ZRAICK and SANDRA STEVENSON"
+    },
+    {
+      "id": "H71SV",
+      "media": "https://static01.nyt.com/images/2018/04/05/briefing/06ambriefing-asia-promo/06ambriefing-asia-slide-0PJF-thumbStandard.jpg",
+      "headline": "Trade War, Tiger Woods, Islamic State: Your Friday Briefing",
+      "abstract": "Here’s what you need to know to start your day.",
+      "publisher": "By CHARLES McDERMID"
+    },
+    {
+      "id": "2o3Nl",
+      "media": "https://static01.nyt.com/images/2018/04/06/us/politics/06dc-tariffs-TRUMP/merlin_136439370_4d6d9393-6437-42f3-939a-9689d035d2b6-thumbStandard.jpg",
+      "headline": "Trump Doubles Down on Potential Trade War With China",
+      "abstract": "President Trump said he would consider imposing tariffs on an additional $100 billion worth of Chinese goods in retaliation for China’s plan to impose its own tariffs on American products.",
+      "publisher": "By ANA SWANSON and KEITH BRADSHER"
+    },
+    {
+      "id": "7nu03",
+      "media": "https://static01.nyt.com/images/2018/04/05/world/06china-trade-1/merlin_136408791_46d801f8-8247-4055-a55e-6c7cb09bff1d-thumbStandard.jpg",
+      "headline": "Why China Is Confident It Can Beat Trump in a Trade War",
+      "abstract": "Beijing has a strong grip on banks, the news media and politics, and it seems willing to take advantage of vulnerabilities in the American political system.",
+      "publisher": "By STEVEN LEE MYERS"
+    },
+    {
+      "id": "ZVS7f",
+      "media": "https://static01.nyt.com/images/2018/04/06/us/politics/06reg-epa4/06reg-epa4-thumbStandard.jpg",
+      "headline": "E.P.A. Officials Sidelined After Questioning Scott Pruitt",
+      "abstract": "At least five agency officials were reassigned or demoted, or requested new jobs after raising concerns about the administrator’s security demands and spending.",
+      "publisher": "By ERIC LIPTON, KENNETH P. VOGEL and LISA FRIEDMAN"
+    }
+  ];
 
 function playArticle(img) {
     if (audio != null) { audio.pause(); }
@@ -170,71 +207,33 @@ $(function () {
     });
 
     articlePlayer = new articlePlayer();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
+ 
+    var today = new Date();
 
-    url += '?' + $.param({
-        'api-key': "2c9cc4b44f294ebd952e98a69c93118d"
-    });
+    var weekday = new Array(7);
+    weekday[0] = "MONDAY";
+    weekday[1] = "TUESDAY";
+    weekday[2] = "WEDNESDAY";
+    weekday[3] = "THURSDAY";
+    weekday[4] = "FRIDAY";
+    weekday[5] = "SATURDAY";
+    weekday[6] = "SUNDAY";
 
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function (result) {
-        var today = new Date();
+    var month = new Array(12);
+    month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+    $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + 5 + " ARTICLES");
 
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
-
-            var media;
-
-            if ((result.results[i]).multimedia.length > 0) {
-                media = (result.results[i]).multimedia[0].url;
-            }
-
-            var headline = (result.results[i]).title;
-            var abstract = (result.results[i]).abstract;
-            var publisher = (result.results[i]).byline;
-
-            if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-                $('.news-container').append(newsSectionDiv);
-
-                var newsResult = {
-                    "id": randomID(),
-                    "media": media,
-                    "headline": headline,
-                    "abstract": abstract,
-                    "publisher": publisher                    
-                };
-                newsResultsArray.push(newsResult);
-            }
-        }
-    }).fail(function (err) {
-        throw err;
-    });
 
     $("#play-button").click(function (event) {
         audio.play();

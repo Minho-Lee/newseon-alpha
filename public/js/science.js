@@ -2,7 +2,44 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var newsResultsArray = [];
+
+var newsResultsArray = [
+    {
+      "id": "wMIgE",
+      "media": "https://static01.nyt.com/images/2018/04/06/science/06TB-INFRARED1/06TB-INFRARED1-thumbStandard-v2.jpg",
+      "headline": "How Do You Count Endangered Species? Look to the Stars",
+      "abstract": "Pairing astronomers’ algorithms for star-hunting with drones equipped with infrared cameras, scientists have developed a new tool kit to help conservation and fight poaching.",
+      "publisher": "By JOANNA KLEIN"
+    },
+    {
+      "id": "25hyu",
+      "media": "https://static01.nyt.com/images/2018/04/05/science/05TB-DINOPRINTS1/05TB-DINOPRINTS1-thumbStandard.jpg",
+      "headline": "In Footprints on Scotland’s Isle of Skye, Signs of a Dinosaur Playground",
+      "abstract": "Ancient footprints left by long-necked sauropods offer a snapshot of the mid-Jurassic period, which has yielded relatively few fossil remains.",
+      "publisher": "By NICHOLAS ST. FLEUR"
+    },
+    {
+      "id": "npfx5",
+      "media": "https://static01.nyt.com/images/2018/04/05/science/05TB-WHALES1/05TB-WHALES1-thumbStandard.jpg",
+      "headline": "Baleen Whales Intermingled as They Evolved, and Share DNA With Distant Cousins",
+      "abstract": "Genome sequencing of six species of baleen whales shows how they have evolved into more of a network and have a wide range of genetic diversity, according to a new study.",
+      "publisher": "By KAREN WEINTRAUB"
+    },
+    {
+      "id": "0mNDW",
+      "media": "https://static01.nyt.com/images/2018/04/06/science/10SCI-TAKE1/10SCI-TAKE1-thumbStandard-v3.jpg",
+      "headline": "Hot Springs Lower Stress in Japan’s Popular Bathing Monkeys",
+      "abstract": "Photogenic snow monkeys have been a long time tourist attraction, but only recently have scientists investigated their unusual behavior.",
+      "publisher": "By JAMES GORMAN"
+    },
+    {
+      "id": "yLcG3",
+      "media": "https://static01.nyt.com/images/2018/03/29/science/00SCI-MUMMY-head/00SCI-MUMMY-head-thumbStandard.jpg",
+      "headline": "The F.B.I. and the Mystery of the Mummy’s Head",
+      "abstract": "A museum wasn’t sure whose head it had put on display. That’s when the F.B.I.’s forensic scientists were called in to crack the agency’s oldest case.",
+      "publisher": "By NICHOLAS ST. FLEUR"
+    }
+  ];
 
 function playArticle(img) {
     if (audio != null) { audio.pause(); }
@@ -170,71 +207,33 @@ $(function () {
     });
 
     articlePlayer = new articlePlayer();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
+ 
+    var today = new Date();
 
-    url += '?' + $.param({
-        'api-key': "2c9cc4b44f294ebd952e98a69c93118d"
-    });
+    var weekday = new Array(7);
+    weekday[0] = "MONDAY";
+    weekday[1] = "TUESDAY";
+    weekday[2] = "WEDNESDAY";
+    weekday[3] = "THURSDAY";
+    weekday[4] = "FRIDAY";
+    weekday[5] = "SATURDAY";
+    weekday[6] = "SUNDAY";
 
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function (result) {
-        var today = new Date();
+    var month = new Array(12);
+    month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+    $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + 5 + " ARTICLES");
 
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
-
-            var media;
-
-            if ((result.results[i]).multimedia.length > 0) {
-                media = (result.results[i]).multimedia[0].url;
-            }
-
-            var headline = (result.results[i]).title;
-            var abstract = (result.results[i]).abstract;
-            var publisher = (result.results[i]).byline;
-
-            if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-                $('.news-container').append(newsSectionDiv);
-
-                var newsResult = {
-                    "id": randomID(),
-                    "media": media,
-                    "headline": headline,
-                    "abstract": abstract,
-                    "publisher": publisher                    
-                };
-                newsResultsArray.push(newsResult);
-            }
-        }
-    }).fail(function (err) {
-        throw err;
-    });
 
     $("#play-button").click(function (event) {
         audio.play();

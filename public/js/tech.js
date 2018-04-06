@@ -2,7 +2,44 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var newsResultsArray = [];
+
+var newsResultsArray = [
+    {
+      "id": "LMEG2",
+      "media": "https://static01.nyt.com/images/2018/04/06/sports/06masters-finau/06masters-finau-thumbStandard.jpg",
+      "headline": "Tony Finau Steals Masters Spotlight After Dislocating Ankle",
+      "abstract": "Finau had nearly withdrawn from the tournament after his injury on Wednesday, but he played and was tied for second after a wild first round on Thursday.",
+      "publisher": "By BILL PENNINGTON"
+    },
+    {
+      "id": "G584P",
+      "media": "https://static01.nyt.com/images/2018/04/06/sports/06tiger-weary/merlin_136421637_fefc647c-76d7-42bc-93ca-d5ca3fd6b888-thumbStandard.jpg",
+      "headline": "Tiger Woods Is More Dogged Than Dazzling in His Return to the Masters",
+      "abstract": "Woods, appearing in his first major tournament since 2015, shot a one-over-par 73 that required him to repeatedly dig out of trouble.",
+      "publisher": "By KAREN CROUSE"
+    },
+    {
+      "id": "yUHQj",
+      "media": "https://static01.nyt.com/images/2018/04/06/sports/06kyrie-pic/06kyrie-pic-thumbStandard.jpg",
+      "headline": "Celtics’ Kyrie Irving Will Miss the N.B.A. Playoffs",
+      "abstract": "His knee injury is a big blow to Boston, which had hopes of contending for the championship. That now seems highly unlikely.",
+      "publisher": "By SCOTT CACCIOLA"
+    },
+    {
+      "id": "UuH3k",
+      "media": "https://static01.nyt.com/images/2018/04/06/sports/06tebow/merlin_136443171_eb2bbfbb-7aee-4ed5-980b-0b1638bf12df-thumbStandard.jpg",
+      "headline": "Tim Tebow Hits Home Run in First At-Bat. Sound Familiar?",
+      "abstract": "In his first at-bat in Class A, he homered. Same in the instructional league. And on Thursday, he did it in Class AA.",
+      "publisher": "By JAMES WAGNER"
+    },
+    {
+      "id": "0OgAt",
+      "media": "https://static01.nyt.com/images/2018/04/05/sports/05KEPNERprint1/05KEPNERprint1-thumbStandard.jpg",
+      "headline": "Want to See the Starting Pitcher? Don’t Arrive Late",
+      "abstract": "At Citi Field, the Mets’ Noah Syndergaard was gone after four innings. His counterpart, Philadelphia’s Aaron Nola, lasted five. Both surrendered only two runs.",
+      "publisher": "By TYLER KEPNER"
+    }
+  ];
 
 function playArticle(img) {
     if (audio != null) { audio.pause(); }
@@ -170,71 +207,33 @@ $(function () {
     });
 
     articlePlayer = new articlePlayer();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
+ 
+    var today = new Date();
 
-    url += '?' + $.param({
-        'api-key': "2c9cc4b44f294ebd952e98a69c93118d"
-    });
+    var weekday = new Array(7);
+    weekday[0] = "MONDAY";
+    weekday[1] = "TUESDAY";
+    weekday[2] = "WEDNESDAY";
+    weekday[3] = "THURSDAY";
+    weekday[4] = "FRIDAY";
+    weekday[5] = "SATURDAY";
+    weekday[6] = "SUNDAY";
 
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function (result) {
-        var today = new Date();
+    var month = new Array(12);
+    month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+    $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + 5 + " ARTICLES");
 
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
-
-            var media;
-
-            if ((result.results[i]).multimedia.length > 0) {
-                media = (result.results[i]).multimedia[0].url;
-            }
-
-            var headline = (result.results[i]).title;
-            var abstract = (result.results[i]).abstract;
-            var publisher = (result.results[i]).byline;
-
-            if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-                $('.news-container').append(newsSectionDiv);
-
-                var newsResult = {
-                    "id": randomID(),
-                    "media": media,
-                    "headline": headline,
-                    "abstract": abstract,
-                    "publisher": publisher                    
-                };
-                newsResultsArray.push(newsResult);
-            }
-        }
-    }).fail(function (err) {
-        throw err;
-    });
 
     $("#play-button").click(function (event) {
         audio.play();

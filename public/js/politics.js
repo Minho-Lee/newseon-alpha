@@ -2,7 +2,44 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var newsResultsArray = [];
+
+var newsResultsArray = [
+    {
+      "id": "FGAGP",
+      "media": "https://static01.nyt.com/images/2018/04/05/business/05FACEBOOK/05FACEBOOK-thumbStandard.jpg",
+      "headline": "Facebook Says Cambridge Analytica Harvested Data of Up to 87 Million Users",
+      "abstract": "Mr. Zuckerberg, Facebook’s chief executive, will appear before multiple congressional committees next week. It is part of the company’s efforts to be more open about its work.",
+      "publisher": "By CECILIA KANG and SHEERA FRENKEL"
+    },
+    {
+      "id": "NEkIO",
+      "media": "https://static01.nyt.com/images/2018/04/05/business/05Postal.web/05Postal.web-thumbStandard.jpg",
+      "headline": "Is Amazon Bad for the Postal Service? Or Its Savior?",
+      "abstract": "President Trump says Amazon costs the U.S.P.S. billions of dollars. But the available evidence is far less certain, and some of it suggests the opposite.",
+      "publisher": "By NICK WINGFIELD"
+    },
+    {
+      "id": "ESfS1",
+      "media": "https://static01.nyt.com/images/2018/04/05/business/05STARVE/05STARVE-thumbStandard.jpg",
+      "headline": "YouTube Attacker’s Complaints Echoed Fight Over Ad Dollars",
+      "abstract": "Video creators, including Nasim Aghdam, have been complaining for months about YouTube’s pulling their ads. Then one of them went to company headquarters with a gun.",
+      "publisher": "By NELLIE BOWLES and JACK NICAS"
+    },
+    {
+      "id": "aTsgd",
+      "media": "https://static01.nyt.com/images/2018/04/05/business/05STARVE/05STARVE-thumbStandard.jpg",
+      "headline": "‘Vegan Bodybuilder’: How YouTube Attacker, Nasim Aghdam, Went Viral in Iran",
+      "abstract": "Nasim Najafi Aghdam, the woman who attacked YouTube on Tuesday, had a strong following for her often bizarre videos.",
+      "publisher": "By DAISUKE WAKABAYASHI, THOMAS ERDBRINK and MATTHEW HAAG"
+    },
+    {
+      "id": "8BGTy",
+      "media": "https://static01.nyt.com/images/2018/04/06/business/06SECURITY1/06SECURITY1-thumbStandard.jpg",
+      "headline": "YouTube Shooting Puts a Focus on Workplace Security",
+      "abstract": "Active shooter trainings, security cameras and “behavioral threat assessment teams” try to avoid or mitigate office attacks like the one at YouTube.",
+      "publisher": "By TIFFANY HSU and JACK NICAS"
+    }
+  ];
 
 function playArticle(img) {
     if (audio != null) { audio.pause(); }
@@ -170,71 +207,33 @@ $(function () {
     });
 
     articlePlayer = new articlePlayer();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
+ 
+    var today = new Date();
 
-    url += '?' + $.param({
-        'api-key': "2c9cc4b44f294ebd952e98a69c93118d"
-    });
+    var weekday = new Array(7);
+    weekday[0] = "MONDAY";
+    weekday[1] = "TUESDAY";
+    weekday[2] = "WEDNESDAY";
+    weekday[3] = "THURSDAY";
+    weekday[4] = "FRIDAY";
+    weekday[5] = "SATURDAY";
+    weekday[6] = "SUNDAY";
 
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function (result) {
-        var today = new Date();
+    var month = new Array(12);
+    month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+    $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + 5 + " ARTICLES");
 
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
-
-            var media;
-
-            if ((result.results[i]).multimedia.length > 0) {
-                media = (result.results[i]).multimedia[0].url;
-            }
-
-            var headline = (result.results[i]).title;
-            var abstract = (result.results[i]).abstract;
-            var publisher = (result.results[i]).byline;
-
-            if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-                $('.news-container').append(newsSectionDiv);
-
-                var newsResult = {
-                    "id": randomID(),
-                    "media": media,
-                    "headline": headline,
-                    "abstract": abstract,
-                    "publisher": publisher                    
-                };
-                newsResultsArray.push(newsResult);
-            }
-        }
-    }).fail(function (err) {
-        throw err;
-    });
 
     $("#play-button").click(function (event) {
         audio.play();
