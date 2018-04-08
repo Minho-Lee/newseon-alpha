@@ -11,7 +11,19 @@
     "ejs": "^2.5.7",
     "express": "^4.13.3",
     "vcap_services": "^0.3.4",
-    "watson-developer-cloud": "^3.0.6"
+    "watson-developer-cloud": "^3.0.6",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express-session": "^1.15.5",
+    "find-or-create": "^1.1.0",
+    "mongoose": "^4.11.9",
+    "morgan": "~1.8.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4"
   },
   "engines": {
     "node": "4.0.0"

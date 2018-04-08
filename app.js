@@ -5,20 +5,47 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 var cfenv = require('cfenv');
+var path = require('path');
+
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var session = require('express-session');
 
 const watson = require('watson-developer-cloud');
 const vcapServices = require('vcap_services');
 
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+var users = require('./routes/users');
+var auth = require('./routes/auth');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://sssaini1:sssaini1@ds237389.mlab.com:37389/node-passport-social', { useMongoClient: true })
+  .then(() =>  console.log('connection successful'))
+  .catch((err) => console.error(err));
+
+app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session({
+  secret: 's3cr3t',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/users', users);
+app.use('/auth', auth);
 
 app.use(express.static(__dirname + '/public'));
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
 
 app.get('/', function (req, res) {
   res.render('main.ejs');
