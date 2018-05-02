@@ -45,20 +45,32 @@
     <div class="container">
 
 <div style="float:right; margin-top:1rem;">
-    <div>Sukhpal Saini</div>     
-     <div>Logout</div><img src="https://lh5.googleusercontent.com/-P35CIab5egM/AAAAAAAAAAI/AAAAAAAAABE/HZkT57GdXeY/photo.jpg?sz=50" alt="">  </div> 
+     </div> 
 
       <div class="row">
-        <div class="col-md-12" style="margin-top:1rem;">
+        <div class="col-md-6" style="margin-top:1rem;">
           <h1>TOP STORIES</h1>
+
+
         </div>
+
+
+  <div class="col-md-6 " style="margin-top:1rem;">
+
+    <div style="margin-right: 1rem;">
+
+  <img style="margin-left:1rem;" class="pull-right" src="<%= user.profile_url %>" >
+    <div>  
+
+      <div style=" text-align: right;" class=""><%= user.name %></div>
+    <div style=" text-align: right;"><a href="/auth/logout">Logout</a></div> 
+</div>
+  </div>
+      </div>
 
       </div>
 
-
-
-
-      <div class="row news-album-container" style="">
+      <div class="row news-album-container">
 
         <div class="col-md-6">
           <div class="news-album-cover-container">

@@ -12,9 +12,9 @@ router.get('/login', function(req, res, next) {
 });
 
 /* LOGOUT ROUTER */
-router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
+router.get('/logout', function(req, res){req.session.destroy(function (err) {
+    res.redirect('/'); //Inside a callback… bulletproof!
+  });
 });
 
 /* FACEBOOK ROUTER */
@@ -40,12 +40,12 @@ router.get('/twitter/callback',
 
 /* GOOGLE ROUTER */
 router.get('/google',
-  passportGoogle.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+  passportGoogle.authenticate('google', {prompt: 'select_account',  scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
 router.get('/google/callback',
-  passportGoogle.authenticate('google', { failureRedirect: '/login' }),
+  passportGoogle.authenticate('google', { failureRedirect: '/auth/login' }),
   function(req, res) {
-    res.redirect('/users');
+    res.redirect('/');
   });
 
 /* GITHUB ROUTER */

@@ -139,7 +139,7 @@ function addToQueueVisuals(newsObject) {
     var sidebarQueue = $(".components");
     console.log("mediaobject " + JSON.stringify(newsObject));
 
-    var newsCoverToAdd = '<li id="'+newsObject.id +'"><a href="#"><img style="width:60px;" src="' + newsObject.media + '" alt=""><div style="display:inline-block; margin-left:.5rem;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
+    var newsCoverToAdd = '<li id="'+newsObject.id +'"><a href="#"><img style="width:60px; margin-right:0.25rem; margin-bottom:0.25rem;" src="' + newsObject.media + '" alt=""><div style="display:inline-block; margin-top:.5rem;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
 
     sidebarQueue.append(newsCoverToAdd);
 
