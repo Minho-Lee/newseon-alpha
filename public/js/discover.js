@@ -28,7 +28,11 @@ function playArticle(img) {
     console.log(articlePlayer.getQueue());
 }
 
-function addToQueue(img) {
+function addToQueue(element) {
+
+	var img = element.childNodes[0].childNodes[0];
+
+	console.dir(img);
     var targetID = img.id;
     
     console.log(targetID.substring(19, targetID.length));
@@ -102,7 +106,7 @@ function addToQueueVisuals(newsObject) {
     var sidebarQueue = $(".components");
     console.log("mediaobject " + JSON.stringify(newsObject));
 
-    var newsCoverToAdd = '<li id="'+newsObject.id +'"><a href="#"><img style="width:60px;" src="' + newsObject.media + '" alt=""><div style="display:inline-block; margin-left:.5rem;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
+    var newsCoverToAdd = '<li id="'+newsObject.id +'"><a href="#"><img style="width:60px; margin-right:0.25rem; margin-bottom:0.25rem;" src="' + newsObject.media + '" alt=""><div style="display:inline-block; margin-left:.5rem;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
 
     sidebarQueue.append(newsCoverToAdd);
 
@@ -219,7 +223,7 @@ $(function () {
             var publisher = (result.results[i]).byline;
 
             if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container"><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png" onclick="addToQueue(this)" ><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
+                var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:100px;width:100px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:7.5rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:7.5rem;"><div class="row zero-margin"><div class="add-to-playlist-container" onclick="addToQueue(this)" ><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png"><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
                 $('.news-container').append(newsSectionDiv);
 
                 var newsResult = {

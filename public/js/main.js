@@ -23,14 +23,14 @@ $(function () {
         audio.pause();
     });
     
-    // $(".play-cover-button").click(function (event) {
-    //     location.href = "/discover?section="+event.target.id;   
-    //          console.log(event);
-    // });
-
     $(".play-cover-button").click(function (event) {
-        location.href = "/" + event.target.id;   
+        location.href = "/discover?section="+event.target.id;   
              console.log(event);
     });
+
+    // $(".play-cover-button").click(function (event) {
+    //     location.href = "/" + event.target.id;   
+    //          console.log(event);
+    // });
 });
 

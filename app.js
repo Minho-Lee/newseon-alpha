@@ -60,7 +60,7 @@ app.get('/app', function (req, res) {
 
 app.get('/', ensureAuthenticated, function (req, res) {
 	  console.log(JSON.stringify(req.user));
-  res.render('main.ejs', { user: req.user });
+  res.render('main-dynamic.ejs', { user: req.user });
 });
 app.get('/landingpage', function (req, res) {
   res.render('landingpage.ejs');

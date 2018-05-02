@@ -120,12 +120,14 @@ a:hover {
 }
 
 .add-to-playlist-container:hover .add-to-playlist-button {
-    width: 22px;
-    height: 22px;
+   /* width: 22px;
+    height: 22px;*/
 }
 
 .add-to-playlist-container:hover {
     background-color: rgb(88, 0, 128);
+    
+     cursor: pointer;
 }
 
 .add-to-playlist-button {
