@@ -101,7 +101,6 @@ a:hover {
 .news-album-cover-title {
     color: white;
     font-size: 2rem;
-    padding-left: 0.5rem;
 }
 
 .play-button {
@@ -126,7 +125,7 @@ a:hover {
 
 .add-to-playlist-container:hover {
     background-color: rgb(88, 0, 128);
-    
+
      cursor: pointer;
 }
 
@@ -187,7 +186,7 @@ a:hover {
 
 .section-news-album-cover-container {
     position: relative;
-    width: 100px;
+    width: 110px;
 }
 
 .image {
