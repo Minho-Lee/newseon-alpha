@@ -9,7 +9,7 @@ function playArticle(img) {
     articlePlayer.currentStatus = "notplaying";
     var targetID = img.id;
     var newsObject = {
-        "id": newsResultsArray[targetID.substring(11, targetID.length)].id, 
+        "id": newsResultsArray[targetID.substring(11, targetID.length)].id,
         "headline": newsResultsArray[targetID.substring(11, targetID.length)].headline,
         "abstract": newsResultsArray[targetID.substring(11, targetID.length)].abstract,
         "publisher": newsResultsArray[targetID.substring(11, targetID.length)].publisher,
@@ -30,15 +30,15 @@ function playArticle(img) {
 
 function addToQueue(element) {
 
-	var img = element.childNodes[0].childNodes[0];
+    var img = element.childNodes[0].childNodes[0];
 
-	console.dir(img);
+    console.dir(img);
     var targetID = img.id;
-    
+
     console.log(targetID.substring(19, targetID.length));
     console.log(newsResultsArray);
     var newsObject = {
-        "id": newsResultsArray[targetID.substring(19, targetID.length)].id, 
+        "id": newsResultsArray[targetID.substring(19, targetID.length)].id,
         "headline": newsResultsArray[targetID.substring(19, targetID.length)].headline,
         "abstract": newsResultsArray[targetID.substring(19, targetID.length)].abstract,
         "publisher": newsResultsArray[targetID.substring(19, targetID.length)].publisher,
@@ -57,13 +57,14 @@ function addToQueue(element) {
 
 
 
-function startPlayer(articleToPlay, playOnce) {console.log(articleToPlay);
+function startPlayer(articleToPlay, playOnce) {
+    console.log(articleToPlay);
     articlePlayer.setCurrentPlayingID(articleToPlay.id);
     updateQueueVisuals();
     fetch('/api/text-to-speech/token')
-        .then(function (response) {
+        .then(function(response) {
             return response.text();
-        }).then(function (token) {
+        }).then(function(token) {
             audio = WatsonSpeech.TextToSpeech.synthesize({
                 text: articleToPlay.headline,
                 token: token,
@@ -73,7 +74,7 @@ function startPlayer(articleToPlay, playOnce) {console.log(articleToPlay);
             updatePlayerVisuals();
             audio.play();
 
-            audio.onended = function () {
+            audio.onended = function() {
                 articlePlayer.removeFromQueue(0);
                 articlePlayer.currentStatus = "notplaying";
                 updatePlayerVisuals();
@@ -87,20 +88,20 @@ function startPlayer(articleToPlay, playOnce) {console.log(articleToPlay);
                 }
 
 
-                if (articlePlayer.currentStatus == "notplaying"){
-                	$("#player-bar").toggleClass("playerbar-active");
+                if (articlePlayer.currentStatus == "notplaying") {
+                    $("#player-bar").toggleClass("playerbar-active");
 
 
 
 
+                    //TODO: add active animation
 
 
 
-                	
                 }
             }
 
-            audio.ontimeupdate = function () {
+            audio.ontimeupdate = function() {
                 var duration = audio.duration;
 
                 //TODO. setting duration to a static 10 but can be dynamically changed based on the number of words in the line
@@ -119,20 +120,20 @@ function addToQueueVisuals(newsObject) {
     var sidebarQueue = $(".components");
     console.log("mediaobject " + JSON.stringify(newsObject));
 
-    var newsCoverToAdd = '<li id="'+newsObject.id +'"><a href="#"><img class="sidebar-news-cover" style="width:60px;" src="' + newsObject.media + '" alt=""><div style="display:inline-block;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
+    var newsCoverToAdd = '<li id="' + newsObject.id + '"><a href="#"><img class="sidebar-news-cover" style="width:60px;" src="' + newsObject.media + '" alt=""><div style="display:inline-block;"><div style="font-size:0.75rem;"class="queue-news-meta1">' + newsObject.publisher + '</div><div style="font-size:0.55rem;"class="queue-news-meta2">' + newsObject.publisher + '</div></div><div style="margin-top:1rem;font-size:0.75rem;"class="queue-news-headline">' + newsObject.headline + '</div></a></li>';
 
     sidebarQueue.append(newsCoverToAdd);
 
 
 }
 
-function updateQueueVisuals(){
+function updateQueueVisuals() {
     for (let i = 0; i < newsResultsArray.length; i++) {
         const element = newsResultsArray[i];
-        $("#"+element.id).removeClass("queue-news-selected");
-        
+        $("#" + element.id).removeClass("queue-news-selected");
+
     }
-    $("#"+articlePlayer.currentPlayingID).addClass("queue-news-selected");
+    $("#" + articlePlayer.currentPlayingID).addClass("queue-news-selected");
 }
 
 function updatePlayerVisuals() {
@@ -168,20 +169,20 @@ function GetMediaImage(result) {
 function randomID() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  
+
     for (var i = 0; i < 5; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-  
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
     return text;
-  }
+}
 
-  function playAll(element) {
+function playAll(element) {
 
 
-  }
+}
 
-$(function () {
-    $(".play-cover-button").click(function (event) {
+$(function() {
+    $(".play-cover-button").click(function(event) {
         location.href = "/discover?section=" + event.target.id;
         console.log(event);
     });
@@ -196,7 +197,7 @@ $(function () {
     $.ajax({
         url: url,
         method: 'GET'
-    }).done(function (result) {
+    }).done(function(result) {
         var today = new Date();
 
         var weekday = new Array(7);
@@ -223,7 +224,7 @@ $(function () {
         month[11] = "DECEMBER";
         $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
 
-        for (var i = 0; i < Math.min(result.num_results,5); i++) {
+        for (var i = 0; i < Math.min(result.num_results, 5); i++) {
 
             var media;
 
@@ -244,29 +245,29 @@ $(function () {
                     "media": media,
                     "headline": headline,
                     "abstract": abstract,
-                    "publisher": publisher                    
+                    "publisher": publisher
                 };
                 newsResultsArray.push(newsResult);
             }
         }
-    }).fail(function (err) {
+    }).fail(function(err) {
         throw err;
     });
 
-    $("#play-button").click(function (event) {
+    $("#play-button").click(function(event) {
         audio.play();
         articlePlayer.currentStatus = "playing";
         updatePlayerVisuals();
 
     });
-    $("#pause-button").click(function (event) {
+    $("#pause-button").click(function(event) {
         audio.pause();
         articlePlayer.currentStatus = "notplaying";
         updatePlayerVisuals();
 
     });
 
-    $("#time-button").click(function (event) {
+    $("#time-button").click(function(event) {
 
         var duration = audio.duration;
         if (audio.duration > 2500) {
@@ -279,7 +280,7 @@ $(function () {
     });
 
 
-    $(".play-cover-button").click(function (event) {
+    $(".play-cover-button").click(function(event) {
         location.href = "/discover?section=" + event.target.id;
         console.log(event);
     });

@@ -1,10 +1,11 @@
 'use strict';
 
+require('dotenv').config({silent: true});
+
 let fs = require('fs');
 let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
-var cfenv = require('cfenv');
 var path = require('path');
 
 var logger = require('morgan');
@@ -20,7 +21,7 @@ var auth = require('./routes/auth');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://sssaini1:sssaini1@ds237389.mlab.com:37389/node-passport-social', { useMongoClient: true })
+mongoose.connect(process.env.MLAB_DB, { useMongoClient: true })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
@@ -105,13 +106,13 @@ app.get('/discover', function (req, res) {
     section: req.query.section
   });
 });
-var appEnv = cfenv.getAppEnv();
+var appEnv = process.env;
 
 // text to speech token endpoint
 var ttsAuthService = new watson.AuthorizationV1(
   Object.assign({
-      username: "47c46cde-c5ea-4073-a1ad-b7fb5e17e089", // or hard-code credentials here
-      password: "TFmq1It70lAo"
+      username: process.env.TTS_USERNAME, // or hard-code credentials here
+      password: process.env.TTS_PASSWORD
     },
     vcapServices.getCredentials('text_to_speech') // pulls credentials from environment in bluemix, otherwise returns {}
   )
@@ -137,9 +138,8 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/login')
 }
 
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 6008;
 
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function () {
-  // print a message when the server starts listening
-  console.log("Server starting on " + appEnv.url);
+app.listen(port, function() {
+  console.log('Server running on port: %d', port);
 });
