@@ -11,6 +11,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
+
 var passport = require('passport');
 var session = require('express-session');
 
@@ -18,6 +19,8 @@ const watson = require('watson-developer-cloud');
 const vcapServices = require('vcap_services');
 
 var auth = require('./routes/auth');
+
+var AllowedUser = require('./models/allowed_model');
 
 mongoose.Promise = global.Promise;
 
@@ -51,49 +54,34 @@ app.get('/app', function (req, res) {
     },
     "userid": "115589406670306456769",
     "profile_url": "https://lh5.googleusercontent.com/-P35CIab5egM/AAAAAAAAAAI/AAAAAAAAABE/HZkT57GdXeY/photo.jpg?sz=50",
-    "name": "Sukhpal Saini",
+    "name": "Sample ",
     "__v": 0,
     "updated_at": {
         "$date": "2018-05-02T12:51:40.411Z"
     }
-} });
+}});
 });
 
 app.get('/', ensureAuthenticated, function (req, res) {
-	  console.log(JSON.stringify(req.user));
-  res.render('main-dynamic.ejs', { user: req.user });
+ AllowedUser.find({
+    }, {}, function (err, doc) {
+        if (err) {
+            console.log('got an error ' + err);
+        }
+
+        if (doc[0].emails.includes(req.user.email)){
+  res.render('main.ejs', { user: req.user });}else {
+
+    console.log("rejected");
+  res.redirect('/auth/login');}
 });
+
+
+});
+
+
 app.get('/landingpage', function (req, res) {
   res.render('landingpage.ejs');
-});
-app.get('/sidebar', function (req, res) {
-  res.render('sidebar.ejs');
-});
-app.get('/app', function (req, res) {
-  res.render('app.ejs');
-});
-
-app.get('/home', function (req, res) {
-  res.render('home.ejs');
-});
-app.get('/sports', function (req, res) {
-  res.render('sports.ejs');
-});
-app.get('/science', function (req, res) {
-  res.render('science.ejs');
-});
-app.get('/technology', function (req, res) {
-  res.render('tech.ejs');
-});
-app.get('/politics', function (req, res) {
-  res.render('politics.ejs');
-});
-app.get('/business', function (req, res) {
-  res.render('business.ejs');
-});
-
-app.get('/testingpage', function (req, res) {
-  res.render('testingpage.ejs');
 });
 
 app.get('/users', ensureAuthenticated, function(req, res, next) {
@@ -101,10 +89,29 @@ app.get('/users', ensureAuthenticated, function(req, res, next) {
   res.render('user.ejs', { user: req.user });
 });
 
-app.get('/discover', function (req, res) {
-  res.render('discover.ejs', {
+app.get('/discover', ensureAuthenticated, function (req, res,next ) {
+
+
+   AllowedUser.find({
+    }, {}, function (err, doc) {
+        if (err) {
+            console.log('got an error ' + err);
+        }
+
+        if (doc[0].emails.includes(req.user.email)){
+   res.render('discover.ejs', {
     section: req.query.section
-  });
+  });}else {
+
+    console.log("rejected");
+  res.redirect('/auth/login');}
+});
+
+
+
+
+
+
 });
 var appEnv = process.env;
 

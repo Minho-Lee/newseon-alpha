@@ -40,7 +40,8 @@ router.get('/twitter/callback',
 
 /* GOOGLE ROUTER */
 router.get('/google',
-  passportGoogle.authenticate('google', {prompt: 'select_account',  scope: ['https://www.googleapis.com/auth/plus.login'] }));
+  passportGoogle.authenticate('google', {prompt: 'select_account',  scope: ['https://www.googleapis.com/auth/userinfo.profile',
+        'https://www.googleapis.com/auth/userinfo.email'] }));
 
 router.get('/google/callback',
   passportGoogle.authenticate('google', { failureRedirect: '/auth/login' }),

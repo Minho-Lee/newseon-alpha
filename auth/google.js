@@ -9,8 +9,8 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
 console.log(profile);
-console.log(profile.photos[0].value);
-       User.findOrCreate({ userid: profile.id }, { name: profile.displayName,userid: profile.id, profile_url: profile.photos[0].value }, function (err, user) {
+
+       User.findOrCreate({ userid: profile.id }, { name: profile.displayName,userid: profile.id, email:profile.emails[0].value, profile_url: profile.photos[0].value }, function (err, user) {
          return done(err, user);
        });
   }
