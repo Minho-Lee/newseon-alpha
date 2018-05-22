@@ -1,6 +1,6 @@
 {
-  "name": "NewseumAppAlpha",
-  "description": "An alpha release for the Newseum app.",
-  "repository": "https://github.com/bdcorps/newseum-alpha.git",
+  "name": "NewseonAppAlpha",
+  "description": "An alpha release for the Newseon app.",
+  "repository": "https://github.com/bdcorps/newseon-alpha.git",
   "keywords": ["node", "news", "bootstrap"]
 }

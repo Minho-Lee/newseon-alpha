@@ -1,6 +1,6 @@
 ---
 applications:
-- name: newseumapp
+- name: newseonapp
   command: npm start
   path: .
   memory: 256M

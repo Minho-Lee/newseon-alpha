@@ -1,7 +1,7 @@
 {
-  "name": "NewseumAppAlpha",
+  "name": "NewseonAppAlpha",
   "version": "0.2.0",
-  "description": "An alpha release for the Newseum app.",
+  "description": "An alpha release for the Newseon app.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -30,13 +30,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bdcorps/newseum-alpha.git"
+    "url": "https://github.com/bdcorps/newseon-alpha.git"
   },
   "keywords": [
     "node",
     "news",
     "bootstrap"
   ],
-  "author": "Newseum App",
+  "author": "Newseon App",
   "license": "MIT"
 }
