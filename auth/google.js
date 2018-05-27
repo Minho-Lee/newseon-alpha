@@ -5,14 +5,21 @@ var User = require('../models/user_model');
 passport.use(new GoogleStrategy({
     clientID: "668895022164-tcfccvvs5jqrj21jqqqnv46ici1g5env.apps.googleusercontent.com",
     clientSecret: "WoXTSjq1bP6lWkBoNMrPBvtj",
-    callbackURL: "http://localhost:6008/auth/google/callback"
+    callbackURL: "http://newseonapp.mybluemix.net/auth/google/callback"
   },
-  function(accessToken, refreshToken, profile, done) {
-console.log(profile);
+  function (accessToken, refreshToken, profile, done) {
+    console.log(profile);
 
-       User.findOrCreate({ userid: profile.id }, { name: profile.displayName,userid: profile.id, email:profile.emails[0].value, profile_url: profile.photos[0].value }, function (err, user) {
-         return done(err, user);
-       });
+    User.findOrCreate({
+      userid: profile.id
+    }, {
+      name: profile.displayName,
+      userid: profile.id,
+      email: profile.emails[0].value,
+      profile_url: profile.photos[0].value
+    }, function (err, user) {
+      return done(err, user);
+    });
   }
 ));
 

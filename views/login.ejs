@@ -8,92 +8,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Newseon</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../css/loginpage.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
 </head>
 
 <body>
 
-
     <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
-     
-         <img class="feature-icon" style="width:36px; margin:0 0.5rem 0 0;" src="../images/newseon-logo.png" alt="Generic placeholder image">
-      <h5 class="my-0 mr-md-auto font-weight-normal text-white logo-text">newse<span style="font-weight: 600">on</span></h5>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">FEATURED <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">DISCOVER</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="#">TRENDING</a>
-            </li>
-          </ul>
-         <div class="">
+            <img class="feature-icon" style="width:36px; margin:0 0.5rem 0 0;" src="../images/newseon-logo.png" alt="Generic placeholder image">
+            <h5 class="my-0 mr-md-auto font-weight-normal text-white logo-text">newse
+                <span style="font-weight: 600">on</span>
+            </h5>
 
-
-
-      <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary-on-dark" data-toggle="modal" data-target="#loginModal">
-  Sign in
-</button>
-
-
-
-
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">FEATURED
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DISCOVER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TRENDING</a>
+                    </li>
+                </ul>
+                <div class="">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary-on-dark" data-toggle="modal" data-target="#loginModal">
+                        Sign in
+                    </button>
 
 
+                    <a class="typeform-share button btn btn-outline-primary-on-dark" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
+                        target="_blank">Register</a>
+                    <script>
+                        (function () {
+                            var qs, js, q, s, d = document,
+                                gi = d.getElementById,
+                                ce = d.createElement,
+                                gt = d.getElementsByTagName,
+                                id = "typef_orm_share",
+                                b = "https://embed.typeform.com/";
+                            if (!gi.call(d, id)) {
+                                js = ce.call(d, "script");
+                                js.id = id;
+                                js.src = b + "embed.js";
+                                q = gt.call(d, "script")[0];
+                                q.parentNode.insertBefore(js, q)
+                            }
+                        })()
+                    </script>
 
-  <a class="typeform-share button btn btn-outline-primary-on-dark" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right" target="_blank">Register</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
-
-     </div>
-        </div>
-      </nav>
+                </div>
+            </div>
+        </nav>
     </header>
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Login to newse<span style="font-weight: 600">on</span> app</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <img class="feature-icon" style="display: block;
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Login to newse
+                        <span style="font-weight: 600">on</span> app</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="feature-icon" style="display: block;
     margin-left: auto;
     margin-right: auto;
  " src="../images/newseon-logo.png" alt="Generic placeholder image">
 
 
-<form action="/auth/google">
-  <input type="submit" style="display: block;margin:2rem auto 2rem auto;color:#800080;" class="btn btn-outline-primary-on-light" value="Connect with Google"></input>
+                    <form action="/auth/google">
+                        <input type="submit" style="display: block;margin:2rem auto 2rem auto;color:#800080;" class="btn btn-primary-on-dark" value="Connect with Google"></input>
 
-    </form>
+                    </form>
 
 
 
-      </div>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 
@@ -123,7 +138,25 @@
                             <div>
                                 <button type="button" class="btn btn-primary-on-light">Watch Video</button>
 
-                                <a class="typeform-share button btn btn-primary-on-light" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right" target="_blank">Sign up for Beta</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+                                <a class="typeform-share button btn btn-primary-on-light" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
+                                    target="_blank">Sign up for Beta</a>
+                                <script>
+                                    (function () {
+                                        var qs, js, q, s, d = document,
+                                            gi = d.getElementById,
+                                            ce = d.createElement,
+                                            gt = d.getElementsByTagName,
+                                            id = "typef_orm_share",
+                                            b = "https://embed.typeform.com/";
+                                        if (!gi.call(d, id)) {
+                                            js = ce.call(d, "script");
+                                            js.id = id;
+                                            js.src = b + "embed.js";
+                                            q = gt.call(d, "script")[0];
+                                            q.parentNode.insertBefore(js, q)
+                                        }
+                                    })()
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -150,24 +183,26 @@
                 <div class="col-lg-4">
                     <img class="feature-icon" src="../images/twotone_face_black_18dp.png" alt="Generic placeholder image">
                     <div class="feature-text">
-                    <h2>Discover.</h2>
-                    <p class="feature-description">Hundreds of up-to date news articles.</p>
-               </div>
+                        <h2>Discover.</h2>
+                        <p class="feature-description">Hundreds of up-to date news articles.</p>
+                    </div>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="feature-icon" src="../images/twotone_list_black_18dp.png" alt="Generic placeholder image">
                     <div class="feature-text">
-                    <h2>Stay Informed.</h2>
-                    <p class="feature-description">Curated stories from trusted sources.</p>
-                </div>           </div>
+                        <h2>Stay Informed.</h2>
+                        <p class="feature-description">Curated stories from trusted sources.</p>
+                    </div>
+                </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="feature-icon" src="../images/twotone_favorite_black_18dp.png" alt="Generic placeholder image">
                     <div class="feature-text">
-                    <h2>Share Information.</h2>
-                    <p class="feature-description">Share news on your favorite social media platform.</p>
-                </div>           </div>
+                        <h2>Share Information.</h2>
+                        <p class="feature-description">Share news on your favorite social media platform.</p>
+                    </div>
+                </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
@@ -178,8 +213,9 @@
                 <div class="col-md-12 text-center">
                     <img src="http://via.placeholder.com/500x300" class="img-fluid" alt="Responsive image">
                     <h2 class="section-showcase-text">See it in action
-    
-</h2></div>
+
+                    </h2>
+                </div>
             </div>
         </div>
     </section>
@@ -188,45 +224,48 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-2 text-center">
-                     <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
- </div>
-                       <div class="col-md-2 text-center">
-                
-                      <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
- </div>
-                        <div class="col-md-2 text-center">
-                
-                       <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
+                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
+                </div>
+                <div class="col-md-2 text-center">
+
+                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
+                </div>
+                <div class="col-md-2 text-center">
+
+                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
                 </div>
             </div>
 
 
             <div class="row footer-headings-container">
                 <div class="col-md-4 text-center footer-heading">
-                   <h2>HOME</h2>
- </div>
-                       <div class="col-md-4 text-center footer-heading">
-                  <h2>PRESS KIT</h2>
- </div>
-                        <div class="col-md-4 text-center footer-heading">
-                   <h2>CONTACT US</h2>
+                    <h2>HOME</h2>
+                </div>
+                <div class="col-md-4 text-center footer-heading">
+                    <h2>PRESS KIT</h2>
+                </div>
+                <div class="col-md-4 text-center footer-heading">
+                    <h2>CONTACT US</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12 text-center">
                     <hr>
-                   <p class="copyright-text">Copyright 2018, Newseon</p>
- </div>
+                    <p class="copyright-text">Copyright 2018, Newseon</p>
+                </div>
             </div>
         </div>
     </section>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

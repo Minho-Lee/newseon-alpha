@@ -1,30 +1,51 @@
-
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
- .navbar-nav{margin-left: 0;}
 
-.nav-item {padding: 0;}
+.navbar-nav {
+    margin-left: 0;
+}
 
-.logo-text {font-size: 1.5rem;}
-.bg-black{background-color: #000;}
+.nav-item {
+    padding: 0;
+}
 
-body{font-family: 'IBM Plex Sans', sans-serif;}
-section{margin:4rem 0 4rem 0;}
-h2{font-size:18px;margin-bottom:0;}
-p{font-size: 14px;}
+.logo-text {
+    font-size: 1.5rem;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+section {
+    margin: 4rem 0 4rem 0;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 14px;
+}
 
 .main-title-text {
-font-size:3rem;
-margin:0 0 0 0;
+    font-size: 3rem;
+    margin: 0 0 0 0;
 }
 
 .main-subtitle-text {
-font-size:1.5rem;
-color:rgb(0,0,0,0.5);
-margin:0 0 1.5rem 0;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0, 0.5);
+    margin: 0 0 1.5rem 0;
 }
 
 .btn-primary-on-light {
@@ -32,110 +53,117 @@ margin:0 0 1.5rem 0;
     border-radius: 0px;
     border: none;
     padding: 0.5rem 2rem 0.5rem 2rem;
-margin:0 0.75rem 0 0;
-color:#fff;
-} 
+    margin: 0 0.75rem 0 0;
+    color: #fff;
+}
 
 .btn-primary-on-light:hover {
     background-color: #4d004d;
-   color:#fff;
+    color: #fff;
 }
 
-
-.btn-outline-primary-on-light{  
+.btn-outline-primary-on-light {
     border-radius: 0px;
-    border-color:#fff;
+    border-color: #800080;
     padding: 0.5rem 2rem 0.5rem 2rem;
-color:#fff;}
-.btn-outline-primary-on-light:hover {
-    background-color: #ffffff;
-   color:#800080;
+    color: #800080;
+    background-color: transparent;
 }
 
+.btn-outline-primary-on-light:hover {
+    background-color: #800080;
+    color: #fff;
+}
 
 .btn-primary-on-dark {
     background-color: #800080;
     border-radius: 0px;
     border: none;
     padding: 0.5rem 2rem 0.5rem 2rem;
-margin:0 0.75rem 0 0;
-color:#fff;
+    margin: 0 0.75rem 0 0;
+    color: #fff;
 }
 
 .btn-primary-on-dark:hover {
     background-color: #ffffff;
-   color:#800080;
+    color: #800080;
 }
 
-
-
-.btn-outline-primary-on-dark{  
+.btn-outline-primary-on-dark {
     border-radius: 0px;
-    border-color:#fff;
+    border-color: #fff;
     padding: 0.5rem 2rem 0.5rem 2rem;
-color:#fff;}
+    color: #fff;
+    background-color: transparent;
+}
+
 .btn-outline-primary-on-dark:hover {
     background-color: #ffffff;
-   color:#800080;
+    color: #800080;
 }
-
-
 
 .main-description {
     margin-left: 0rem;
 }
 
-
-
 /*Features Section*/
+
 .features {
     text-align: center;
 }
-.feature-text{margin:0.75rem 0 0.75rem 0;}
 
-.feature-icon{/*width:48px;*/}
+.feature-text {
+    margin: 0.75rem 0 0.75rem 0;
+}
 
-.feature-description{
-    color:#848484;
+.feature-icon {
+    /*width:48px;*/
+}
+
+.feature-description {
+    color: #848484;
 }
 
 /*Showcase Section*/
-.section-showcase-text{
-    margin:0.5rem 0 0.5rem 0;
+
+.section-showcase-text {
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 /*Footer Section*/
-#section-footer{
+
+#section-footer {
     margin-bottom: 1rem;
 }
 
-.social-media-icon{width:56px;}
+.social-media-icon {
+    width: 56px;
+}
 
-.footer-heading{margin:1rem 0 0.75rem 0;}
-.copyright-text {margin-bottom:0;}
+.footer-heading {
+    margin: 1rem 0 0.75rem 0;
+}
 
-
-
+.copyright-text {
+    margin-bottom: 0;
+}
 
 /*Login Modal
 */
 
-.modal-content{border-radius: 0;}
+.modal-content {
+    border-radius: 0;
+}
 
 @media only screen and (min-width: 320px) {}
-
-
 
 /* Extra Small Devices, Phones */
 
 @media only screen and (min-width: 480px) {}
 
-
-
 /* Small Devices, Tablets */
 
 @media only screen and (min-width: 768px) {
-
     .main-description {
         position: absolute;
         bottom: 0;
@@ -145,13 +173,13 @@ color:#fff;}
         position: absolute;
         bottom: 0;
     }
-
-    .navbar-nav{margin-left: 4rem;}
-
-.nav-item {padding: 0 1.5rem 0 1.5rem;}
+    .navbar-nav {
+        margin-left: 4rem;
+    }
+    .nav-item {
+        padding: 0 1.5rem 0 1.5rem;
+    }
 }
-
-
 
 /* Medium Devices, Desktops */
 
@@ -160,8 +188,6 @@ color:#fff;}
         text-align: left;
     }
 }
-
-
 
 /* Large Devices, Wide Screens */
 

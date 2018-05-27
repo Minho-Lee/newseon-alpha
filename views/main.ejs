@@ -44,8 +44,8 @@
     </nav>
     <div class="container">
 
-<div style="float:right; margin-top:1rem;">
-     </div> 
+      <div style="float:right; margin-top:1rem;">
+      </div>
 
       <div class="row">
         <div class="col-md-6" style="margin-top:1rem;">
@@ -55,18 +55,22 @@
         </div>
 
 
-  <div class="col-md-6 " style="margin-top:1rem;">
+        <div class="col-md-6 " style="margin-top:1rem;">
 
-    <div style="margin-right: 1rem;">
+          <div style="margin-right: 1rem;">
 
-  <img style="margin-left:1rem;" class="pull-right" src="<%= user.profile_url %>" >
-    <div>  
+            <img style="margin-left:1rem;" class="pull-right" src="<%= user.profile_url %>">
+            <div>
 
-      <div style=" text-align: right;" class=""><%= user.name %></div>
-    <div style=" text-align: right;"><a href="/auth/logout">Logout</a></div> 
-</div>
-  </div>
-      </div>
+              <div style=" text-align: right;" class="">
+                <%= user.name %>
+              </div>
+              <div style=" text-align: right;">
+                <a href="/auth/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
 

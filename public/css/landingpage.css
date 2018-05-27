@@ -4,17 +4,18 @@ body {
   padding: 0;
   margin: 0;
 }
+
 * {
   box-sizing: border-box;
 }
 
 button {
-    background-color: #292929;
-    color: white;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border: none;
-    text-decoration: none;
+  background-color: #292929;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: none;
+  text-decoration: none;
 }
 
 .container {
@@ -25,8 +26,8 @@ button {
   align-items: center;
 }
 
-.col-md-4 { 
-  background: url(../images/bg2.jpg) no-repeat; 
+.col-md-4 {
+  background: url(../images/bg2.jpg) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
