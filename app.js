@@ -80,7 +80,6 @@ app.get('/', ensureAuthenticated, function (req, res) {
         user: req.user
       });
     } else {
-
       console.log("rejected");
       res.redirect('/auth/login');
     }
@@ -102,8 +101,6 @@ app.get('/users', ensureAuthenticated, function (req, res, next) {
 });
 
 app.get('/discover', ensureAuthenticated, function (req, res, next) {
-
-
   AllowedUser.find({}, {}, function (err, doc) {
     if (err) {
       console.log('got an error ' + err);
@@ -113,6 +110,7 @@ app.get('/discover', ensureAuthenticated, function (req, res, next) {
 
     if (doc != null) {
       if (allowedEmails.includes(req.user.email)) {
+        //if (allowedEmails.includes("sunnyashiin@gmail.com")) {
         res.render('discover.ejs', {
           section: req.query.section
         });
