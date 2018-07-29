@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,32 +30,31 @@
     <script src="bower_components/fetch/fetch.js"></script>
 
     <script>
-      // fetch the toke and create the audio element ahead of time
-      var audio;
-      document.querySelector('#button').onclick = function () {
+// fetch the toke and create the audio element ahead of time
+var audio;
+document.querySelector('#button').onclick = function () {
 
-        fetch('/api/text-to-speech/token')
-          .then(function (response) {
-            return response.text();
-          }).then(function (token) {
-            audio = WatsonSpeech.TextToSpeech.synthesize({
-              text: document.querySelector('#text').value,
-              token: token,
-              autoPlay: false,
-              accept: 'audio/wav'
-            });
-          });
-      };
+fetch('/api/text-to-speech/token')
+  .then(function(response) {
+    return response.text();
+  }).then(function (token) {
+    audio = WatsonSpeech.TextToSpeech.synthesize({
+      text: document.querySelector('#text').value,
+      token: token,
+      autoPlay: false,
+      accept: 'audio/wav'
+    });
+  });};
 
 
-      document.querySelector('#play').onclick = function () {
-        audio.play();
-      };
+document.querySelector('#play').onclick = function () {
+  audio.play();
+};
 
-      document.querySelector('#pause').onclick = function () {
-        audio.pause();
-      };
-    </script>
+document.querySelector('#pause').onclick = function () {
+  audio.pause();
+};
+</script>
   </div>
 </body>
 

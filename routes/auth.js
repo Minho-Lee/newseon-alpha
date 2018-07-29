@@ -7,15 +7,12 @@ var passportGitHub = require('../auth/github');
 var User = require('../models/user_model');
 
 /* LOGIN ROUTER */
-router.get('/login', function (req, res, next) {
-  res.render('login.ejs', {
-    title: 'Please Sign In with:'
-  });
+router.get('/login', function(req, res, next) {
+  res.render('login.ejs', { title: 'Please Sign In with:' });
 });
 
 /* LOGOUT ROUTER */
-router.get('/logout', function (req, res) {
-  req.session.destroy(function (err) {
+router.get('/logout', function(req, res){req.session.destroy(function (err) {
     res.redirect('/'); //Inside a callback… bulletproof!
   });
 });
@@ -25,10 +22,8 @@ router.get('/facebook',
   passportFacebook.authenticate('facebook'));
 
 router.get('/facebook/callback',
-  passportFacebook.authenticate('facebook', {
-    failureRedirect: '/login'
-  }),
-  function (req, res) {
+  passportFacebook.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/users');
   });
@@ -38,41 +33,29 @@ router.get('/twitter',
   passportTwitter.authenticate('twitter'));
 
 router.get('/twitter/callback',
-  passportTwitter.authenticate('twitter', {
-    failureRedirect: '/login'
-  }),
-  function (req, res) {
+  passportTwitter.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
     res.redirect('/users');
   });
 
 /* GOOGLE ROUTER */
 router.get('/google',
-  passportGoogle.authenticate('google', {
-    prompt: 'select_account',
-    scope: ['https://www.googleapis.com/auth/userinfo.profile',
-      'https://www.googleapis.com/auth/userinfo.email'
-    ]
-  }));
+  passportGoogle.authenticate('google', {prompt: 'select_account',  scope: ['https://www.googleapis.com/auth/userinfo.profile',
+        'https://www.googleapis.com/auth/userinfo.email'] }));
 
 router.get('/google/callback',
-  passportGoogle.authenticate('google', {
-    failureRedirect: '/auth/login'
-  }),
-  function (req, res) {
+  passportGoogle.authenticate('google', { failureRedirect: '/auth/login' }),
+  function(req, res) {
     res.redirect('/');
   });
 
 /* GITHUB ROUTER */
 router.get('/github',
-  passportGitHub.authenticate('github', {
-    scope: ['user:email']
-  }));
+  passportGitHub.authenticate('github', { scope: [ 'user:email' ] }));
 
 router.get('/github/callback',
-  passportGitHub.authenticate('github', {
-    failureRedirect: '/login'
-  }),
-  function (req, res) {
+  passportGitHub.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/users');
   });

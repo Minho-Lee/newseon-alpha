@@ -1,269 +1,257 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#ffcc00">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Newseon</title> />
+    <meta name="description" content="A digital news streaming platform that lets you access personalized content on the go."
+    />
+    <meta name="Resource-type" content="Document" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Newseon</title>
-    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../css/loginpage.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+
+
+    <link href="../css/loginpage.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <header>
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 
-            <img class="feature-icon" style="width:36px; margin:0 0.5rem 0 0;" src="../images/newseon-logo.png" alt="Generic placeholder image">
-            <h5 class="my-0 mr-md-auto font-weight-normal text-white logo-text">newse<span style="font-weight: 600">on</span>
+        <img class="feature-icon" style="height:42px; margin:0 0.5rem 0 0;" src="../images/newseon-navbar-logo.png" alt="Generic placeholder image">
+
+        <div class="navbar-logo">
+            <h5 class="my-0 font-weight-normal logo-text" style="color:#5500ff;">
+                NEWSE<span style="font-weight: 600">ON</span>
             </h5>
+        </div>
+        <ul class="ml-auto list-unstyled" style="margin-top:1rem;">
+            <li class="active" style="float:left;">
+                <a style="margin-right:1rem;" href="/auth/google" class="btn btn-outline-primary-on-dark">Sign in</a>
+            </li>
+            <li class="" style="float:left;">
+                <a class="typeform-share button btn btn-primary-on-light" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
+                    target="_blank">Register</a>
+                <script>
+                    (function () {
+                        var qs, js, q, s, d = document,
+                            gi = d.getElementById,
+                            ce = d.createElement,
+                            gt = d.getElementsByTagName,
+                            id = "typef_orm_share",
+                            b = "https://embed.typeform.com/";
+                        if (!gi.call(d, id)) {
+                            js = ce.call(d, "script");
+                            js.id = id;
+                            js.src = b + "embed.js";
+                            q = gt.call(d, "script")[0];
+                            q.parentNode.insertBefore(js, q)
+                        }
+                    })()
+                </script>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">FEATURED
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">DISCOVER</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">TRENDING</a>
-                    </li>
-                </ul>
-                <div class="">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary-on-dark" data-toggle="modal" data-target="#loginModal">
-                        Sign in
-                    </button>
+            </li>
+
+        </ul>
 
 
-                    <a class="typeform-share button btn btn-outline-primary-on-dark" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
-                        target="_blank">Register</a>
-                    <script>
-                        (function () {
-                            var qs, js, q, s, d = document,
-                                gi = d.getElementById,
-                                ce = d.createElement,
-                                gt = d.getElementsByTagName,
-                                id = "typef_orm_share",
-                                b = "https://embed.typeform.com/";
-                            if (!gi.call(d, id)) {
-                                js = ce.call(d, "script");
-                                js.id = id;
-                                js.src = b + "embed.js";
-                                q = gt.call(d, "script")[0];
-                                q.parentNode.insertBefore(js, q)
-                            }
-                        })()
-                    </script>
 
-                </div>
+    </nav>
+
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <div class="intro">
+                <section style="margin-bottom:1rem;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center" style="margin-top:2rem;">
+                                <div class="" style="width:100%;">
+                                    <h1 style="font-size:4rem; font-weight:600;" class="">Tired of reading fake news?</h1>
+                                    <p style="font-size:3rem;" class="">Get Newseon</p>
+                                    <div class="arrow bounce">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </nav>
-    </header>
+        </div>
 
+        <div class="section" id="section1">
+            <section style="">
+                <div style="" class="container">
+                    <div class="row" style="height:320px;">
+                        <div style="" class="col-md-6 offset-md-3">
+                            <div class="" style="">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" style="width:100%; height: 100%;" src="https://www.youtube.com/embed/EZ0yFD2HsV4"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-top:2rem;" class="col-md-12">
+                            <div class="main-description" style="">
+                                <div class="text-center">
+                                    <div>
+                                        <button type="button" onclick="location.href='https://www.youtube.com/watch?v=EZ0yFD2HsV4';" class="btn btn-primary-on-light">
+                                            Watch Video
+                                        </button>
 
+                                        <a class="typeform-share button btn btn-primary-on-light" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
+                                            target="_blank">Sign up for Beta</a>
+                                        <script>
+                                            (function () {
+                                                var qs, js, q, s, d = document,
+                                                    gi = d.getElementById,
+                                                    ce = d.createElement,
+                                                    gt = d.getElementsByTagName,
+                                                    id = "typef_orm_share",
+                                                    b = "https://embed.typeform.com/";
+                                                if (!gi.call(d, id)) {
+                                                    js = ce.call(d, "script");
+                                                    js.id = id;
+                                                    js.src = b + "embed.js";
+                                                    q = gt.call(d, "script")[0];
+                                                    q.parentNode.insertBefore(js, q)
+                                                }
+                                            })()
+                                        </script>
+                                    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Login to newse<span style="font-weight: 600">on</span> app</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                                    <div style="margin-top:4rem;">
+                                        <h3 class="main-title-text">Introducing Newseon</h3>
+                                        <h4 class="main-subtitle-text">A digital news streaming platform that lets you access personalized content on the
+                                            go.
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <img class="feature-icon" style="display: block;
-    margin-left: auto;
-    margin-right: auto;
- " src="../images/newseon-logo.png" alt="Generic placeholder image">
+            </section>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="intro">
+                <section id="section-features ">
+                    <h1>What's new?</h1>
+                    <div class="container features" style="text-align:center;">
+                        <div class="row">
+                            <div class="col-lg-4 feature" style="">
+                                <div class="card">
+                                    <img class="card-img-top img-responsive" src="../images/banner-1.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h2>Stop Reading. Start Listening.</h2>
+                                        <p class="card-text">Listen to the news headlines as you go about your day, with just a click.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 feature">
+                                <div class="card">
+                                    <img class="card-img-top" src="../images/banner-2.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h2>Follow your interests.</h2>
+                                        <p class="card-text">Access a huge selection of curated playlists on your favorite topics.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 feature">
+                                <div class="card">
+                                    <img class="card-img-top" src="../images/banner-3.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h2>News from Trusted Sources.</h2>
+                                        <p class="card-text">No more worrying about fake news from untrusted sources.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="section fp-auto-height" id="section3">
+            <div class="intro">
+                <section id="section-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Connect with us.</h1>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+
+                                <button type="button" onclick="location.href='mailto:newseonapp@gmail.com';" class="btn btn-primary-on-light" style="margin-top:1rem;">
+                                    Send an email
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-center" style="margin-top:2rem;">
+                            <div class="col-md-2 text-center">
+
+                                <a href="http://fb.me/newseonapp">
+                                    <img class="social-media-icon" style="height:32px;" src="../images/facebook-f-brands.svg" alt="Facebook Social Media Icon">
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="http://twitter.com/newseonapp">
+                                    <img class="social-media-icon" style="height:32px;" src="../images/twitter-brands.svg" alt="Facebook Social Media Icon">
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="http://instagram.com/newseonapp">
+                                    <img class="social-media-icon" style="height:32px;" src="../images/instagram-brands.svg" alt="Facebook Social Media Icon">
+                                </a>
+                            </div>
+                        </div>
 
 
-                    <form action="/auth/google">
-                        <input type="submit" style="display: block;margin:2rem auto 2rem auto;" class="btn btn-primary-on-light" value="Connect with Google"></input>
+                        <div class="row" style="margin-top:2rem;">
+                            <div class="col-md-12 text-center">
 
-                    </form>
+                                <p>
+                                    <a class="brand-text" href="/files/newseon-brand-2018.zip" download="newseon-brand-2018">Branding Guidelines</a>
+                                </p>
 
-
-
-                </div>
+                                <hr>
+                                <p class="copyright-text">Copyright 2018, Newseon</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </div>
         </div>
     </div>
 
+    <script type="text/javascript " src="../dist/fullpage.js "></script>
 
-
-
-
-
-
-
-
-
-
-    <section style="margin-top:10rem;">
-        <div style="" class="container">
-            <div class="row" style="height:315px;">
-                <div style="position:relative;" class="col-md-6">
-                    <div class="" style="">
-                        <div class="main-video embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" style="width:100%; height: 100%;" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div style="" class="col-md-6">
-                    <div class="main-description" style="">
-                        <div class="text-left">
-                            <h3 class="main-title-text">Newseon</h3>
-                            <h4 class="main-subtitle-text">Experience news.</h4>
-                            <div>
-                                <button type="button" class="btn btn-primary-on-light">Watch Video</button>
-
-                                <a class="typeform-share button btn btn-primary-on-light" href="https://newseumapp.typeform.com/to/sldwzZ" data-mode="drawer_right"
-                                    target="_blank">Sign up for Beta</a>
-                                <script>
-                                    (function () {
-                                        var qs, js, q, s, d = document,
-                                            gi = d.getElementById,
-                                            ce = d.createElement,
-                                            gt = d.getElementsByTagName,
-                                            id = "typef_orm_share",
-                                            b = "https://embed.typeform.com/";
-                                        if (!gi.call(d, id)) {
-                                            js = ce.call(d, "script");
-                                            js.id = id;
-                                            js.src = b + "embed.js";
-                                            q = gt.call(d, "script")[0];
-                                            q.parentNode.insertBefore(js, q)
-                                        }
-                                    })()
-                                </script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="container features">
-            <!-- Three columns of text below the carousel -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <img class="feature-icon" src="../images/twotone_face_black_18dp.png" alt="Generic placeholder image">
-                    <div class="feature-text">
-                        <h2>Discover.</h2>
-                        <p class="feature-description">Hundreds of up-to date news articles.</p>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="feature-icon" src="../images/twotone_list_black_18dp.png" alt="Generic placeholder image">
-                    <div class="feature-text">
-                        <h2>Stay Informed.</h2>
-                        <p class="feature-description">Curated stories from trusted sources.</p>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="feature-icon" src="../images/twotone_favorite_black_18dp.png" alt="Generic placeholder image">
-                    <div class="feature-text">
-                        <h2>Share Information.</h2>
-                        <p class="feature-description">Share news on your favorite social media platform.</p>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
-    </section>
-    <section id="section-showcase">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="http://via.placeholder.com/500x300" class="img-fluid" alt="Responsive image">
-                    <h2 class="section-showcase-text">See it in action
-
-                    </h2>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="section-footer">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-2 text-center">
-                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
-                </div>
-                <div class="col-md-2 text-center">
-
-                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
-                </div>
-                <div class="col-md-2 text-center">
-
-                    <img class="social-media-icon" src="../images/circle-placeholder.png" alt="Generic placeholder image">
-                </div>
-            </div>
-
-
-            <div class="row footer-headings-container">
-                <div class="col-md-4 text-center footer-heading">
-                    <h2>HOME</h2>
-                </div>
-                <div class="col-md-4 text-center footer-heading">
-                    <h2>PRESS KIT</h2>
-                </div>
-                <div class="col-md-4 text-center footer-heading">
-                    <h2>CONTACT US</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <hr>
-                    <p class="copyright-text">Copyright 2018, Newseon</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-        crossorigin="anonymous"></script>
+    <script type="text/javascript ">
+        var myFullpage = new fullpage('#fullpage', {
+            anchors: ['1', '2', '3', '4'],
+            navigation: true,
+            navigationPosition: 'right',
+            menu: '.navbar',
+            normalScrollElements: '.navbar',
+            responsive: 1100,
+            licenseKey: "OPEN-SOURCE-GPLV3-LICENSE"
+        });
+    </script>
 </body>
 
 </html>

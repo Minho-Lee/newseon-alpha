@@ -2,7 +2,6 @@ var audio;
 var articlePlayer;
 var playButton = $("#play-button");
 var pauseButton = $("#pause-button");
-var playAllButton = $("#playall-button");
 var newsResultsArray = [];
 
 function playArticle(img) {
@@ -30,8 +29,14 @@ function playArticle(img) {
 }
 
 function addToQueue(element) {
+
     var img = element.childNodes[0].childNodes[0];
+
+    console.dir(img);
     var targetID = img.id;
+
+    console.log(targetID.substring(19, targetID.length));
+    console.log(newsResultsArray);
     var newsObject = {
         "id": newsResultsArray[targetID.substring(19, targetID.length)].id,
         "headline": newsResultsArray[targetID.substring(19, targetID.length)].headline,
@@ -47,31 +52,9 @@ function addToQueue(element) {
 
         startPlayer(articlePlayer.getNextFromQueue(), false);
     }
+
 }
 
-function addMultipleToQueue() {
-
-
-    for (let i = 0; i < newsResultsArray.length; i++) {
-        var newsObject = {
-            "id": newsResultsArray[i].id,
-            "headline": newsResultsArray[i].headline,
-            "abstract": newsResultsArray[i].abstract,
-            "publisher": newsResultsArray[i].publisher,
-            "media": newsResultsArray[i].media
-        };
-        articlePlayer.addToQueue(newsObject);
-        addToQueueVisuals(newsObject);
-        
-    }
-    
-
-    if (articlePlayer.currentStatus == "notplaying") {
-        articlePlayer.currentStatus = "playing";
-
-        startPlayer(articlePlayer.getNextFromQueue(), false);
-    }
-}
 
 
 function startPlayer(articleToPlay, playOnce) {
@@ -201,9 +184,10 @@ function playAll(element) {
 $(function() {
     $(".play-cover-button").click(function(event) {
         location.href = "/discover?section=" + event.target.id;
+        console.log(event);
     });
 
-    articlePlayer = new articlePlayer();/*
+    articlePlayer = new articlePlayer();
     var url = "https://api.nytimes.com/svc/topstories/v2/" + $("#news-section").text().replace(/\n|\r|\s/g, "").toLowerCase() + ".json";
 
     url += '?' + $.param({
@@ -270,81 +254,6 @@ $(function() {
         throw err;
     });
 
-*/
-
-
-
-
-
-    $.ajax({
-        url: "https://newsapi.org/v2/top-headlines?country=us&apiKey=0055459a45974cd89ac8e07fe5513d78",
-        method: 'GET'
-    }).done(function(result) {
-      console.log(result);
-
-      var today = new Date();
-
-        var weekday = new Array(7);
-        weekday[0] = "MONDAY";
-        weekday[1] = "TUESDAY";
-        weekday[2] = "WEDNESDAY";
-        weekday[3] = "THURSDAY";
-        weekday[4] = "FRIDAY";
-        weekday[5] = "SATURDAY";
-        weekday[6] = "SUNDAY";
-
-        var month = new Array(12);
-        month[0] = "JANUARY";
-        month[1] = "FEBRUARY";
-        month[2] = "MARCH";
-        month[3] = "APRIL";
-        month[4] = "MAY";
-        month[5] = "JUNE";
-        month[6] = "JULY";
-        month[7] = "AUGUST";
-        month[8] = "SEPTEMBER";
-        month[9] = "OCTOBER";
-        month[10] = "NOVEMBER";
-        month[11] = "DECEMBER";
-        $("#time").html(weekday[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + " - " + result.num_results + " ARTICLES");
-
-      for (var i = 0; i < Math.min(result.totalResults, 5); i++) {
-
-        var media= (result.articles[i]).urlToImage;
-        var headline = (result.articles[i]).title;
-        var abstract = (result.articles[i]).description;
-        var publisher = (result.articles[i]).source.name;
-
-        if ((media != null) & (headline != null) & (abstract != null) & (publisher != null)) {
-            var newsSectionDiv = '<div class="news-section-content"><div class="row"><div class="col-md-12"><div class="left-float section-news-album-cover-container"><img class="section-news-album" src="' + media + '" id="media' + i + '" style="height:110px;width:110px;" alt="Avatar" class="image"><div class="news-album-overlay play-cover-button" id="home"><img class="news-album-overlay-content play-cover-button" onclick="playArticle(this)" id="play-button' + i + '" src="images/play.png" alt="" style=""></div></div><div style="margin-left:8rem;"><h3 class="news-block-title" id="title' + i + '">' + headline + '</h3><p class="news-block-byline" id="byline' + i + '">' + publisher + '</p></div><div style="margin-left:8rem;"><div class="row zero-margin"><div class="add-to-playlist-container" onclick="addToQueue(this)" ><div class="add-to-playlist-container-box"><img class="add-to-playlist-button" id="add-to-queue-button' + i + '" src="/images/add-button.png"><div class="add-to-playlist-button-text" style=""><div>Add to Playlist</div></div></div></div></div></div></div></div>'
-            $('.news-container').append(newsSectionDiv);
-
-            var newsResult = {
-                "id": randomID(),
-                "media": media,
-                "headline": headline,
-                "abstract": abstract,
-                "publisher": publisher
-            };
-            newsResultsArray.push(newsResult);
-        }
-    }
-
-
-
-    }).fail(function(err) {
-        throw err;
-    });
-
-
-
-
-
-
-
-
-
-
     $("#play-button").click(function(event) {
         audio.play();
         articlePlayer.currentStatus = "playing";
@@ -354,14 +263,6 @@ $(function() {
     $("#pause-button").click(function(event) {
         audio.pause();
         articlePlayer.currentStatus = "notplaying";
-        updatePlayerVisuals();
-
-    });
-
-    $("#playall-button").click(function(event) {
-        addMultipleToQueue();
-        audio.play();
-        articlePlayer.currentStatus = "playing";
         updatePlayerVisuals();
 
     });
