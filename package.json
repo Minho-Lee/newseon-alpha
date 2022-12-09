@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.13.3",
+    "express": "^4.17.3",
     "vcap_services": "^0.3.4",
     "watson-developer-cloud": "^3.0.6",
     "body-parser": "~1.17.1",
